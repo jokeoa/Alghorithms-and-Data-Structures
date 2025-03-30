@@ -1,48 +1,38 @@
 package org.jokeoa;
 
-import org.jetbrains.annotations.NotNull;
-import org.jokeoa.factory.OperatorFactory;
-import org.jokeoa.models.ConsoleInputProvider;
-import org.jokeoa.models.Operator;
+import org.jokeoa.tasks.Task1;
+import org.jokeoa.tasks.Task2;
+import org.jokeoa.tasks.Task3;
 
-import java.io.Console;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Example with Integer type
-        ConsoleInputProvider<Integer> intInputProvider = new ConsoleInputProvider<>(Integer.class);
-        OperatorFactory<Integer> intFactory = new OperatorFactory<>(intInputProvider);
+        Scanner scanner = new Scanner(System.in);
         
-        System.out.println("Working with Integers:");
-        Operator<Integer> intOperator = intFactory.createOperator();
-        System.out.println("Single integer value: " + intOperator.getValue());
+        System.out.println("1. Run Task 1 (Find Minimum)");
+        System.out.println("2. Run Task 2");
+        System.out.println("3. Run Task 3 (Check Prime Number)");
+        System.out.println("4. Exit");
+        System.out.print("Enter your choice: ");
         
-        // Create an operator with an array of integers
-        System.out.println("\nWorking with Integer Array:");
-        Operator<Integer> intArrayOperator = intFactory.createOperatorWithArray(3);
-        System.out.print("Integer array values: ");
-        for (Integer val : intArrayOperator.getArray()) {
-            System.out.print(val + " ");
+        int choice = scanner.nextInt();
+        
+        switch (choice) {
+            case 1:
+                Task1.main(null);
+                break;
+            case 2:
+                Task2.main(null);
+                break;
+            case 3:
+                Task3.main(null);
+                break;
+            case 4:
+                System.out.println("Exiting the program.");
+                break;
+            default:
+                System.out.println("Invalid choice. Exiting.");
         }
-        System.out.println();
-        
-        // Example with Double type
-        System.out.println("\nWorking with Doubles:");
-        ConsoleInputProvider<Double> doubleInputProvider = new ConsoleInputProvider<>(Double.class);
-        OperatorFactory<Double> doubleFactory = new OperatorFactory<>(doubleInputProvider);
-        Operator<Double> doubleOperator = doubleFactory.createOperator();
-        System.out.println("Single double value: " + doubleOperator.getValue());
-        
-        // Example with String type
-        System.out.println("\nWorking with Strings:");
-        ConsoleInputProvider<String> stringInputProvider = new ConsoleInputProvider<>(String.class);
-        OperatorFactory<String> stringFactory = new OperatorFactory<>(stringInputProvider);
-        Operator<String> stringArrayOperator = stringFactory.createOperatorWithArray(2);
-        System.out.print("String array values: ");
-        for (String val : stringArrayOperator.getArray()) {
-            System.out.print(val + " ");
-        }
-        System.out.println();
     }
 }
