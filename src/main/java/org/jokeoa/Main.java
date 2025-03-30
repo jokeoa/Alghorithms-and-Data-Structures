@@ -8,14 +8,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        System.out.println("=== Number Processing System ===");
         System.out.println("1. Run Task 1");
         System.out.println("2. Run Task 2");
         System.out.println("3. Run Task 3");
         System.out.println("4. Run Task 4");
         System.out.println("5. Run Task 5");
         System.out.println("6. Run Task 6");
-        System.out.println("7. Run Task 7 (Reverse Array)");
+        System.out.println("7. Run Task 7");
         System.out.println("8. Exit");
         System.out.print("Enter your choice: ");
         
