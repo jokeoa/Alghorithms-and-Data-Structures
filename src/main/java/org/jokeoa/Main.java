@@ -1,8 +1,6 @@
 package org.jokeoa;
 
-import org.jokeoa.tasks.Task1;
-import org.jokeoa.tasks.Task2;
-import org.jokeoa.tasks.Task3;
+import org.jokeoa.tasks.*;
 
 import java.util.Scanner;
 
@@ -10,10 +8,15 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        System.out.println("1. Run Task 1 (Find Minimum)");
+        System.out.println("=== Number Processing System ===");
+        System.out.println("1. Run Task 1");
         System.out.println("2. Run Task 2");
-        System.out.println("3. Run Task 3 (Check Prime Number)");
-        System.out.println("4. Exit");
+        System.out.println("3. Run Task 3");
+        System.out.println("4. Run Task 4");
+        System.out.println("5. Run Task 5");
+        System.out.println("6. Run Task 6");
+        System.out.println("7. Run Task 7 (Reverse Array)");
+        System.out.println("8. Exit");
         System.out.print("Enter your choice: ");
         
         int choice = scanner.nextInt();
@@ -29,6 +32,18 @@ public class Main {
                 Task3.main(null);
                 break;
             case 4:
+                Task4.main(null);
+                break;
+            case 5:
+                Task5.main(null);
+                break;
+            case 6:
+                Task6.main(null);
+                break;
+            case 7:
+                Task7.main(null);
+                break;
+            case 8:
                 System.out.println("Exiting the program.");
                 break;
             default:
