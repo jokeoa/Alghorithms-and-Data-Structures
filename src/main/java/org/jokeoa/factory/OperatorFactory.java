@@ -19,4 +19,17 @@ public class OperatorFactory<T> {
         operator.setArray();
         return operator;
     }
+    
+    /**
+     * Creates an array operator that only gets array input without asking for a single value.
+     * This helps avoid the double prompt issue.
+     * 
+     * @param size The size of the array
+     * @return A new Operator with array data
+     */
+    public Operator<T> createArrayOperator(int size) {
+        Operator<T> operator = new Operator<>(inputProvider, size, false);
+        operator.setArray();
+        return operator;
+    }
 }

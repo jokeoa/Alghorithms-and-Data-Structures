@@ -25,6 +25,22 @@ public class Operator<T> implements OperatorIn<T> {
         this.size = size;
         setValue();
     }
+    
+    /**
+     * Constructor that optionally skips setting an initial value.
+     * This is useful when we only want to get an array without asking for a single value first.
+     * 
+     * @param inputProvider The input provider
+     * @param size The size of the array
+     * @param setInitialValue Whether to set an initial value
+     */
+    public Operator(InputProvider<T> inputProvider, int size, boolean setInitialValue) {
+        this.inputProvider = inputProvider;
+        this.size = size;
+        if (setInitialValue) {
+            setValue();
+        }
+    }
 
     @Override
     public void setArray() {
