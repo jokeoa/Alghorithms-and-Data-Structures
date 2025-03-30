@@ -2,28 +2,39 @@ package org.jokeoa.models;
 
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
 import lombok.Setter;
 import org.jokeoa.interfaces.InputProvider;
 import org.jokeoa.interfaces.OperatorIn;
 
 @Data
-public class Operator implements OperatorIn {
-    @Setter(AccessLevel.NONE) private int n;
-    @Setter(AccessLevel.NONE) private int[] arr;
-    private final InputProvider inputProvider;
+public class Operator<T> implements OperatorIn<T> {
+    @Setter(AccessLevel.NONE) @Getter private T value;
+    @Setter(AccessLevel.NONE) @Getter private T[] array;
+    private final InputProvider<T> inputProvider;
+    private final int size;
 
-    public Operator(InputProvider inputProvider) {
+    public Operator(InputProvider<T> inputProvider) {
         this.inputProvider = inputProvider;
-        setN();
+        this.size = 0;
+        setValue();
+    }
+    
+    public Operator(InputProvider<T> inputProvider, int size) {
+        this.inputProvider = inputProvider;
+        this.size = size;
+        setValue();
     }
 
-    public void setArr() {
-        System.out.println("Enter " + n + " integers:");
-        this.arr = inputProvider.getIntArray(n);
+    @Override
+    public void setArray() {
+        System.out.println("Enter " + size + " values:");
+        this.array = inputProvider.getArray(size);
     }
 
-    public void setN() {
-        System.out.println("Enter integer N:");
-        this.n = inputProvider.getInt();
+    @Override
+    public void setValue() {
+        System.out.println("Enter a value:");
+        this.value = inputProvider.getValue();
     }
 }

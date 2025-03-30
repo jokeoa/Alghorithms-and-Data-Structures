@@ -3,20 +3,20 @@ package org.jokeoa.factory;
 import org.jokeoa.interfaces.InputProvider;
 import org.jokeoa.models.Operator;
 
-public class OperatorFactory {
-    private final InputProvider inputProvider;
+public class OperatorFactory<T> {
+    private final InputProvider<T> inputProvider;
 
-    public OperatorFactory(InputProvider inputProvider) {
+    public OperatorFactory(InputProvider<T> inputProvider) {
         this.inputProvider = inputProvider;
     }
 
-    public Operator createOperator() {
-        return new Operator(inputProvider);
+    public Operator<T> createOperator() {
+        return new Operator<>(inputProvider);
     }
 
-    public Operator createOperatorWithArray() {
-        Operator operator = new Operator(inputProvider);
-        operator.setArr();
+    public Operator<T> createOperatorWithArray(int size) {
+        Operator<T> operator = new Operator<>(inputProvider, size);
+        operator.setArray();
         return operator;
     }
 }
