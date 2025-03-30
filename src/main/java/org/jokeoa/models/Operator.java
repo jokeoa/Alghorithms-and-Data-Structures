@@ -13,6 +13,7 @@ public class Operator<T> implements OperatorIn<T> {
     @Setter(AccessLevel.NONE) @Getter private T[] array;
     private final InputProvider<T> inputProvider;
     private final int size;
+    private int currentIndex = 0;
 
     public Operator(InputProvider<T> inputProvider) {
         this.inputProvider = inputProvider;
@@ -26,14 +27,6 @@ public class Operator<T> implements OperatorIn<T> {
         setValue();
     }
     
-    /**
-     * Constructor that optionally skips setting an initial value.
-     * This is useful when we only want to get an array without asking for a single value first.
-     * 
-     * @param inputProvider The input provider
-     * @param size The size of the array
-     * @param setInitialValue Whether to set an initial value
-     */
     public Operator(InputProvider<T> inputProvider, int size, boolean setInitialValue) {
         this.inputProvider = inputProvider;
         this.size = size;
@@ -46,11 +39,24 @@ public class Operator<T> implements OperatorIn<T> {
     public void setArray() {
         System.out.println("Enter " + size + " values:");
         this.array = inputProvider.getArray(size);
+        this.currentIndex = 0;
     }
 
     @Override
     public void setValue() {
         System.out.println("Enter a value:");
         this.value = inputProvider.getValue();
+    }
+    
+    public boolean hasNext() {
+        return array != null && currentIndex < array.length;
+    }
+    
+    
+    public T next() {
+        if (!hasNext()) {
+            throw new IllegalStateException("No more elements available");
+        }
+        return array[currentIndex++];
     }
 }
