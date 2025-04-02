@@ -5,18 +5,21 @@ import org.jokeoa.models.ConsoleInputProvider;
 import org.jokeoa.models.Operator;
 
 public class Task7 {
-    public static void reverseArrayInPlace(Integer[] array) {
-        reverseArrayHelper(array, 0, array.length - 1);
-    }
-
-    private static void reverseArrayHelper(Integer[] array, int left, int right) {
-        if (left >= right) {
-            return;
+    /**
+     * Prints elements of an operator in reverse order using recursion.
+     * 
+     * Time Complexity: O(n)
+     * Where n is the number of elements in the operator.
+     * The method makes exactly n recursive calls, one for each element.
+     *
+     * @param operator the operator containing elements to be reversed
+     */
+    public static void reverseOrder(Operator<Integer> operator) {
+        if (operator.hasNext()) {
+            int value = operator.next();
+            reverseOrder(operator);
+            System.out.print(value + " ");
         }
-        int temp = array[left];
-        array[left] = array[right];
-        array[right] = temp;
-        reverseArrayHelper(array, left + 1, right - 1);
     }
 
     public static void main(String[] args) {
@@ -30,11 +33,7 @@ public class Task7 {
         System.out.println("Enter " + n + " values:");
         Operator<Integer> arrayOperator = factory.createArrayOperator(n);
 
-        Integer[] array = arrayOperator.getArray();
-        reverseArrayInPlace(array);
-        System.out.println("Reversed array:");
-        for (Integer value : array) {
-            System.out.print(value + " ");
-        }
+        System.out.println("Reversed order:");
+        reverseOrder(arrayOperator);
     }
 }

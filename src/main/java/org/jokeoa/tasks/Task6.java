@@ -7,6 +7,8 @@ import org.jokeoa.models.Operator;
 public class Task6 {
     /**
      * Calculates the power of a number using recursion.
+     * 
+     * Time Complexity: O(n)
      *
      * @param base     the base number
      * @param exponent the exponent

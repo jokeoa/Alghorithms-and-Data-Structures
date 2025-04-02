@@ -6,12 +6,13 @@ import org.jokeoa.models.Operator;
 
 /**
  * Task3.
+ *
  */
 public class Task3 {
     
     /**
      * Checks if the given number is prime.
-     * 
+     * O(√n)
      * @param number
      * @return true if the number is prime or not
      */

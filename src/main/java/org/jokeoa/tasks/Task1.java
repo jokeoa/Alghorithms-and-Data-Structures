@@ -6,6 +6,7 @@ import org.jokeoa.models.Operator;
 
 /**
  * Task1: Find the minimum element in an array of numbers.
+ * O(n)
  */
 public class Task1 {
     

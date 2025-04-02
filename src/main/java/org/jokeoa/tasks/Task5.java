@@ -3,7 +3,9 @@ package org.jokeoa.tasks;
 import org.jokeoa.factory.OperatorFactory;
 import org.jokeoa.models.ConsoleInputProvider;
 import org.jokeoa.models.Operator;
-
+/**
+ * O(2^n)
+ */
 public class Task5 {
 
     public static Integer findFibonacci(Integer value) {

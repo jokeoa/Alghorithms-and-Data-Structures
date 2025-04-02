@@ -3,7 +3,10 @@ package org.jokeoa.tasks;
 import org.jokeoa.factory.OperatorFactory;
 import org.jokeoa.models.ConsoleInputProvider;
 import org.jokeoa.models.Operator;
-
+/**
+ * O(n)
+ *
+ */
 public class Task4 {
     public static Integer findFactorial(Integer value) {
         if (value == 2){

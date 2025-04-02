@@ -8,7 +8,7 @@ public class Task2 {
     
     /**
      * Calculates the average of  values in the given operator's array.
-     * 
+     * O(n)
      * @param <T> The type of values
      * @param operator The operator containing the array of values
      * @return The average as a double

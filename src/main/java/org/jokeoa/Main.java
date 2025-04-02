@@ -5,21 +5,20 @@ import org.jokeoa.tasks.*;
 import java.util.Scanner;
 
 public class Main {
+    public static final int taskCount = 10;
+
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
-        System.out.println("1. Run Task 1");
-        System.out.println("2. Run Task 2");
-        System.out.println("3. Run Task 3");
-        System.out.println("4. Run Task 4");
-        System.out.println("5. Run Task 5");
-        System.out.println("6. Run Task 6");
-        System.out.println("7. Run Task 7");
-        System.out.println("8. Exit");
+
+        for (int i = 0; i < taskCount; i++) {
+            System.out.println("Task " + (i + 1));
+        }
+        System.out.println("11. Exit");
         System.out.print("Enter your choice: ");
-        
+
         int choice = scanner.nextInt();
-        
+
         switch (choice) {
             case 1:
                 Task1.main(null);
@@ -43,6 +42,15 @@ public class Main {
                 Task7.main(null);
                 break;
             case 8:
+                Task8.main(null);
+                break;
+            case 9:
+                Task9.main(null);
+                break;
+            case 10:
+                Task10.main(null);
+                break;
+            case 11:
                 System.out.println("Exiting the program.");
                 break;
             default:
