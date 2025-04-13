@@ -184,18 +184,6 @@ public class MyArrayList<T> implements ListIn<T> {
 
 
     public @NotNull Iterator iterator() {
-        return new Iterator() {
-            private int currentIndex = 0;
-
-            @Override
-            public boolean hasNext() {
-                return currentIndex < size;
-            }
-
-            @Override
-            public Object next() {
-                return array[currentIndex++];
-            }
-        };
+        return null;
     }
 }
