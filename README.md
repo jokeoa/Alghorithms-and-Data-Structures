@@ -3,6 +3,7 @@
 ![Java](https://img.shields.io/badge/Language-Java-orange)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--04--02-blue)
+![License](https://img.shields.io/npm/l/@tiptap/core.svg)
 
 ## Overview
 This project is developed for the ADS (Algorithms and Data Structures) laboratory work. It is a simple Java application that demonstrates the use of Maven for dependency management, Lombok for boilerplate code reduction, and practical implementations of various algorithms and data structures.
@@ -43,7 +44,6 @@ This project is developed for the ADS (Algorithms and Data Structures) laborator
 - **Methods**:
   - `getInt()`: Reads an integer from the console.
   - `getIntArray(int size)`: Reads an array of integers from the console.
-
 ### Main
 - **Package**: `org.jokeoa`
 - **Description**: The main entry point of the application.

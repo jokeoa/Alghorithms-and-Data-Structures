@@ -36,6 +36,7 @@ public class ConsoleInputProvider<T> implements InputProvider<T> {
         for (int i = 0; i < size; i++) {
             arr[i] = getValue();
         }
+
         return arr;
     }
 }

@@ -1,4 +1,4 @@
-package org.jokeoa.tasks;
+package org.jokeoa.weeks.week1.tasks;
 
 import org.jokeoa.factory.OperatorFactory;
 import org.jokeoa.models.ConsoleInputProvider;
@@ -22,6 +22,19 @@ public class Task7 {
         }
     }
 
+    public static void liveCounter(String[] args) {
+        int counter = 0;
+        while (true) {
+            System.out.println("Counter: " + counter);
+            counter++;
+            try {
+                Thread.sleep(1000); // Sleep for 1 second
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                break;
+            }
+        }
+    }
     public static void main(String[] args) {
         ConsoleInputProvider<Integer> inputProvider = new ConsoleInputProvider<>(Integer.class);
         OperatorFactory<Integer> factory = new OperatorFactory<>(inputProvider);

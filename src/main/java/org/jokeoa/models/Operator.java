@@ -57,6 +57,8 @@ public class Operator<T> implements OperatorIn<T> {
         if (!hasNext()) {
             throw new IllegalStateException("No more elements available");
         }
+
         return array[currentIndex++];
     }
+
 }

@@ -1,6 +1,6 @@
 package org.jokeoa;
 
-import org.jokeoa.tasks.*;
+import org.jokeoa.weeks.week1.tasks.*;
 
 import java.util.Scanner;
 

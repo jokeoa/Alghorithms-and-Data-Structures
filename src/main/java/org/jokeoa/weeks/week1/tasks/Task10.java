@@ -1,4 +1,4 @@
-package org.jokeoa.tasks;
+package org.jokeoa.weeks.week1.tasks;
 
 import org.jokeoa.factory.OperatorFactory;
 import org.jokeoa.models.ConsoleInputProvider;

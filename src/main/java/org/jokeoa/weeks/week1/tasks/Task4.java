@@ -1,33 +1,33 @@
-package org.jokeoa.tasks;
+package org.jokeoa.weeks.week1.tasks;
 
 import org.jokeoa.factory.OperatorFactory;
 import org.jokeoa.models.ConsoleInputProvider;
 import org.jokeoa.models.Operator;
 /**
- * O(2^n)
+ * O(n)
+ *
  */
-public class Task5 {
-
-    public static Integer findFibonacci(Integer value) {
-        if (value <= 1) {
+public class Task4 {
+    public static Integer findFactorial(Integer value) {
+        if (value == 2){
             return value;
         }
-        return findFibonacci(value - 1) + findFibonacci(value - 2);
+        return value * findFactorial(value - 1);
     }
     /**
-     * Main method to demonstrate the use of the Task5 class.
+     * Main method to demonstrate finding the factorial of a number.
      *
-     * @param args command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Task 5:");
         ConsoleInputProvider<Integer> inputProvider = new ConsoleInputProvider<>(Integer.class);
         OperatorFactory<Integer> factory = new OperatorFactory<>(inputProvider);
 
+        System.out.println("Task 4:");
         Operator<Integer> sizeOperator = factory.createOperator();
         int n = sizeOperator.getValue();
 
-        Integer fibonacci = findFibonacci(n);
-        System.out.println("The Fibonacci number at position " + n + " is: " + fibonacci);
+
+        Integer factorial = findFactorial(n);
+        System.out.println("The factorial of " + n + " is: " + factorial);
     }
 }
