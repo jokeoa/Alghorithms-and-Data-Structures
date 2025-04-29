@@ -8,6 +8,11 @@ import java.util.Stack;
 public class BST<K extends Comparable<K>, V> {
 
     private Node root;
+    private int size;
+
+    public BST() {
+        this.size = 0;
+    }
 
     private class Node {
         private K key;
@@ -20,11 +25,30 @@ public class BST<K extends Comparable<K>, V> {
         }
     }
 
+    public static class Entry<K, V> {
+        private final K key;
+        private final V value;
+
+        public Entry(K key, V value) {
+            this.key = key;
+            this.value = value;
+        }
+
+        public K getKey() {
+            return key;
+        }
+
+        public V getValue() {
+            return value;
+        }
+    }
+
     public void put(K key, V val) {
         Node newNode = new Node(key, val);
 
         if (root == null) {
             root = newNode;
+            size++;
             return;
         }
 
@@ -51,6 +75,7 @@ public class BST<K extends Comparable<K>, V> {
         } else {
             parent.right = newNode;
         }
+        size++;
     }
 
     public V get(K key) {
@@ -133,24 +158,46 @@ public class BST<K extends Comparable<K>, V> {
                 successorParent.right = successor.right;
             }
         }
+        size--;
+    }
+    public int size(){
+        return size;
     }
 
-    public Iterable<K> iterator() {
-        List<K> keys = new ArrayList<>();
-        Stack<Node> stack = new Stack<>();
-        Node current = root;
+    public Iterator<Entry<K, V>> iterator() {
+        return new Iterator<>() {
+            private final Stack<Node> stack = new Stack<>();
+            private Node current = root;
 
-        while (current != null || !stack.isEmpty()) {
-            while (current != null) {
-                stack.push(current);
-                current = current.left;
+            {
+
+                while (current != null) {
+                    stack.push(current);
+                    current = current.left;
+                }
             }
 
-            current = stack.pop();
-            keys.add(current.key);
-            current = current.right;
-        }
+            @Override
+            public boolean hasNext() {
+                return !stack.isEmpty();
+            }
 
-        return keys;
+            @Override
+            public Entry<K, V> next() {
+                current = stack.pop();
+                Entry<K, V> entry = new Entry<>(current.key, current.val);
+
+                // Move to the right subtree
+                if (current.right != null) {
+                    Node temp = current.right;
+                    while (temp != null) {
+                        stack.push(temp);
+                        temp = temp.left;
+                    }
+                }
+
+                return entry;
+            }
+        };
     }
 }
