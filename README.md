@@ -2,7 +2,7 @@
 
 ![Java](https://img.shields.io/badge/Language-Java-orange)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
-![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--04--02-blue)
+![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--04--29-blue)
 ![License](https://img.shields.io/npm/l/@tiptap/core.svg)
 
 ## Overview
