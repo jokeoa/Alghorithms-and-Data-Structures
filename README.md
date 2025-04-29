@@ -24,6 +24,7 @@ This project is developed for the ADS (Algorithms and Data Structures) laborator
 ## Dependencies
 - **Lombok**: Used to reduce boilerplate code such as getters, setters, and constructors.
 - **JetBrains Annotations**: Used for code annotations and enhanced IDE support.
+- **TestNG**: A testing framework for Java used to write and run unit tests efficiently.
 
 ## Classes and Interfaces
 
@@ -118,4 +119,5 @@ The `MyHashtable` is a custom implementation of a hash table, which is a data st
    ```sh
    mvn clean install
    mvn exec:java -Dexec.mainClass="org.jokeoa.Main"
+`
 `
