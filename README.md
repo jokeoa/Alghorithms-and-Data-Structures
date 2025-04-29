@@ -84,6 +84,33 @@ The project includes multiple task implementations that demonstrate various algo
 - **Key Method**: `reverseArrayInPlace(Integer[] array)`
 - **Algorithm**: Recursive approach swapping elements from both ends
 
+## Data Structures
+
+### Binary Search Tree (BST)
+The Binary Search Tree (BST) is a data structure that stores elements in a hierarchical order. Each node has at most two children, referred to as the left and right child. The left subtree contains nodes with values less than the parent node, and the right subtree contains nodes with values greater than the parent node.
+
+#### Features:
+- Efficient search, insertion, and deletion operations.
+- Average time complexity: O(log n).
+- Worst-case time complexity: O(n) (when the tree becomes unbalanced).
+
+#### Usage:
+- Searching for elements.
+- Sorting data.
+- Implementing associative arrays.
+
+### MyHashtable
+The `MyHashtable` is a custom implementation of a hash table, which is a data structure that maps keys to values using a hash function.
+
+#### Features:
+- Fast lookups, insertions, and deletions.
+- Handles collisions using techniques like chaining or open addressing.
+- Average time complexity: O(1) for basic operations.
+
+#### Usage:
+- Storing and retrieving key-value pairs efficiently.
+- Implementing caches or dictionaries.
+
 ## How to Run
 1. Ensure you have Maven installed.
 2. Navigate to the project directory.
@@ -91,3 +118,4 @@ The project includes multiple task implementations that demonstrate various algo
    ```sh
    mvn clean install
    mvn exec:java -Dexec.mainClass="org.jokeoa.Main"
+`
